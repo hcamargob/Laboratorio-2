@@ -68,7 +68,7 @@ Universidad Nacional de Colombia Sede Bogotá
   pause(1)
   ```
   *Insertar imagen de tortuga transportada (recorta para que se vea solo la ventana de turtlesim)*
-  
+  *Explicar funciones utilizadas (ver archivo)
   
   
   
