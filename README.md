@@ -25,6 +25,11 @@ Universidad Nacional de Colombia Sede Bogotá
 ## METODOLOGÍA
 ### Conexión de ROS con Matlab
   
+  Se abre un terminal para correr el nodo maestro:
+  ```
+  roscore
+  ```
+  
 ## RESULTADOS
 
 ## CONLCUSIONES
