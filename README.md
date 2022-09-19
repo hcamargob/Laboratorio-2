@@ -1,5 +1,5 @@
 # Laboratorio 2: - Robótica de Desarrollo, Intro a ROS
-Robótica
+ROBÓTICA
 
 
 Hugo Alejandro Camargo Barrera
