@@ -48,6 +48,28 @@ Universidad Nacional de Colombia Sede Bogotá
   
   *Insertar imagen de la tortuga movida hacia la derecha*
   
+  Ahora para suscribirse al topic pose y ver la información de este se realiza el siguiente código:
+  ```
+  a=rossubscriber("/turtle1/pose","turtlesim/Pose");
+  Pose=a.LatestMessage
+  ```
+  *Insertar imagen de solo workspace*
+  
+  Cabe aclarar que el comando *rossubscriber* solo se debe ejecutar una vez ya que no es posible suscribirse dos veces a un nodo, entonces solo se debería ejecutar la primera línea una vez y la segunda cada vez que se quiera saber la información de la pose.
+ 
+  El siguiente código de matlab permite enviar todos los valores asociados a la pose de turtle1:
+  ```
+  Client = rossvcclient('/turtle1/teleport_absolute');
+  msg=rosmessage(Client);
+  msg.X=8;
+  msg.Y=5;
+  msg.Theta=2;
+  call(Client,msg);
+  pause(1)
+  ```
+  *Insertar imagen de tortuga transportada (recorta para que se vea solo la ventana de turtlesim)*
+  
+  
   
   
 ## ANÁLISIS Y RESULTADOS
