@@ -46,9 +46,10 @@ Universidad Nacional de Colombia Sede Bogotá
   pause(1)
   ```
   
+  *Insertar imagen de la tortuga movida hacia la derecha*
   
   
   
-## RESULTADOS
+## ANÁLISIS Y RESULTADOS
 
 ## CONLCUSIONES
