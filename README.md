@@ -29,6 +29,25 @@ Universidad Nacional de Colombia Sede Bogotá
   ```
   roscore
   ```
+  Y en otro terminal se corre turtlesim
+  ```
+  rosrun turtlesim turtlesim_node
+  ```
+  Se abre Matlab y se agrega el siguiente código a un script:
+  ```
+  %%
+  rosinit; %Conexión con nodo maestro
+  %%
+  velPub = rospublisher(’/turtle1/cmd_vel’,’geometry_msgs/Twist’); %Creación publicador
+  velMsg = rosmessage(velPub); %Creación de mensaje
+  %%
+  velMsg.Linear.X = 1; %Valor del mensaje
+  send(velPub,velMsg); %Envio
+  pause(1)
+  ```
+  
+  
+  
   
 ## RESULTADOS
 
