@@ -29,7 +29,7 @@ Universidad Nacional de Colombia Sede Bogotá
   ```
   roscore
   ```
-  Y en otro terminal se corre turtlesim
+  Y en otro terminal se corre turtlesim:
   ```
   rosrun turtlesim turtlesim_node
   ```
