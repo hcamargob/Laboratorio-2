@@ -22,9 +22,9 @@ Facultad de Ingeniería
 Universidad Nacional de Colombia Sede Bogotá
 
   
-##METODOLOGÍA
+## METODOLOGÍA
 ### Conexión de ROS con Matlab
   
-##RESULTADOS
+## RESULTADOS
 
-##CONLCUSIONES
+## CONLCUSIONES
