@@ -169,7 +169,10 @@ if __name__ == '__main__':
   ```
 Finalmente, se incluye el script realizado (myTeleopKey.py) al artchivo CMakeLists.txt. Después, se ingresa el comando catkin build en una nueva terminal para guardar los cambios ejecutados y se realiza las pruebas del código ejecutando Turtlesim, corriendo el archivo creado con el comando _rosrun hello\_turtle myTeleopKey.py._
              
- 
+ [![Watch the video](https://user-images.githubusercontent.com/112737454/191165450-7cbf9c3e-54f5-435a-9153-b30d026fbdc4.png)](https://www.youtube.com/watch?v=Xw3C7qd9LrU)
+
+
+
 ## ANÁLISIS Y RESULTADOS
 ### Matlab
    - La conexión entre MatLab y ROS permite abrir un mundo de opciones, pues posibilita acelerar cálculos que terminan siendo utilizados en ROS, lo cual facilita enormemente la labor de control de robots. El contacto inicial es sencillo, muestra comandos claves y manipula la herramienta _turtlesim_ de manera práctica.
