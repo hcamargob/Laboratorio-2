@@ -45,14 +45,15 @@ Universidad Nacional de Colombia Sede Bogotá
   send(velPub,velMsg); %Envio
   pause(1)
   ```
-  ![image](https://user-images.githubusercontent.com/112737454/191140246-11d50df6-fe1e-481e-a8fd-ae791165ae93.png)
+![image](https://user-images.githubusercontent.com/112737454/191142753-adc60d73-4629-47cb-9581-482967ecd7ca.png)
   
   Ahora para suscribirse al topic pose y ver la información de este se realiza el siguiente código:
   ```
   a=rossubscriber("/turtle1/pose","turtlesim/Pose");
   Pose=a.LatestMessage
   ```
-![image](https://user-images.githubusercontent.com/112737454/191140406-9e812bdd-75af-4007-b6a4-180181bbc8e2.png)
+![image](https://user-images.githubusercontent.com/112737454/191142674-48eeb2b1-08ac-4641-83f8-4014e3871376.png)
+
   
   Cabe aclarar que el comando *rossubscriber* solo se debe ejecutar una vez ya que no es posible suscribirse dos veces a un nodo, entonces solo se debería ejecutar la primera línea una vez y la segunda cada vez que se quiera saber la información de la pose.
  
@@ -78,7 +79,33 @@ Universidad Nacional de Colombia Sede Bogotá
   
 ### ROS usando Python
   
-  
+Se importaron las librerías necesarias para la ejecución del programa.
+  ``` 
+import rospy
+import numpy as np
+from geometry_msgs.msg import Twist 
+import termios, sys, os
+from turtlesim.srv import TeleportAbsolute
+from turtlesim.srv import TeleportRelative
+TERMIOS = termios
+  ```
+  Se agrega la siguiente función. Esta recibe las teclas pulsadas en la terminal de Visual Studio, las interpreta y posteriormente realiza una acción.
+  ``` 
+def getkey():
+    fd = sys.stdin.fileno()
+    old = termios.tcgetattr(fd)
+    new = termios.tcgetattr(fd)
+    new[3] = new[3] & ~TERMIOS.ICANON & ~TERMIOS.ECHO
+    new[6][TERMIOS.VMIN] = 1
+    new[6][TERMIOS.VTIME] = 0
+    termios.tcsetattr(fd, TERMIOS.TCSANOW, new)
+    c = None
+    try:
+        c = os.read(fd, 1)
+    finally:
+        termios.tcsetattr(fd, TERMIOS.TCSAFLUSH, old)
+    return c
+  ```
   
 ## ANÁLISIS Y RESULTADOS
 
