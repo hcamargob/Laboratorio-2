@@ -45,8 +45,7 @@ Universidad Nacional de Colombia Sede Bogotá
   send(velPub,velMsg); %Envio
   pause(1)
   ```
-  ![image](https://user-images.githubusercontent.com/112737454/191140246-11d50df6-fe1e-481e-a8fd-ae791165ae93.png)![image](https://user-images.githubusercontent.com/112737454/191140393-2c23c7e6-335d-4dc4-ba3c-02952c052e9e.png)
-
+  ![image](https://user-images.githubusercontent.com/112737454/191140246-11d50df6-fe1e-481e-a8fd-ae791165ae93.png)
   
   Ahora para suscribirse al topic pose y ver la información de este se realiza el siguiente código:
   ```
