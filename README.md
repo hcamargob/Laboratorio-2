@@ -45,15 +45,15 @@ Universidad Nacional de Colombia Sede Bogotá
   send(velPub,velMsg); %Envio
   pause(1)
   ```
-  
-  *Insertar imagen de la tortuga movida hacia la derecha*
+  ![image](https://user-images.githubusercontent.com/112737454/191140246-11d50df6-fe1e-481e-a8fd-ae791165ae93.png)![image](https://user-images.githubusercontent.com/112737454/191140393-2c23c7e6-335d-4dc4-ba3c-02952c052e9e.png)
+
   
   Ahora para suscribirse al topic pose y ver la información de este se realiza el siguiente código:
   ```
   a=rossubscriber("/turtle1/pose","turtlesim/Pose");
   Pose=a.LatestMessage
   ```
-  *Insertar imagen de solo workspace*
+![image](https://user-images.githubusercontent.com/112737454/191140406-9e812bdd-75af-4007-b6a4-180181bbc8e2.png)
   
   Cabe aclarar que el comando *rossubscriber* solo se debe ejecutar una vez ya que no es posible suscribirse dos veces a un nodo, entonces solo se debería ejecutar la primera línea una vez y la segunda cada vez que se quiera saber la información de la pose.
  
@@ -67,7 +67,9 @@ Universidad Nacional de Colombia Sede Bogotá
   call(Client,msg);
   pause(1)
   ```
-  *Insertar imagen de tortuga transportada (recorta para que se vea solo la ventana de turtlesim)*
+
+  ![image](https://user-images.githubusercontent.com/112737454/191140466-a16614ba-a854-49d7-ba1e-ba527bece21b.png)
+  
   *Explicar funciones utilizadas (ver archivo texto importante en el git)
   
   El nodo maestro se finaliza usando el siuiente comando en Matlab:
