@@ -171,4 +171,12 @@ Finalmente, se incluye el script realizado (myTeleopKey.py) al artchivo CMakeLis
                                     
 ## ANÁLISIS Y RESULTADOS
 ### Matlab
+   - La conexión entre MatLab y ROS permite abrir un mundo de opciones, pues posibilita acelerar cálculos que terminan siendo utilizados en ROS, lo cual facilita enormemente la labor de control de robots. El contacto inicial es sencillo, muestra comandos claves y manipula la herramienta _turtlesim_ de manera práctica.
+   - No es posible suscribirse dos veces de seguida a un nodo. Es recomendable entonces volver a ejecutar el comando para visualizar el último mensaje obtenido, ya que, al estar suscrito y volver a suscribirse, va a producir un error.
+                                    
+### Python
+   - Su conexión presentó mas inconvenientes que la conexión mencionada en la subsección anterior, pero tiene un mayor potencial al ser Python. El mayor problema se presentó en direccionar el _catkin\_build_, pues hubo una confusión en el funcionamiento del comando, pero finalmente se obtuvo el resultado esperado.
+   - Esta conexión permite la manipulación de la tortuga en una sola ejecución, esto por la naturaleza del lenguaje Python. Los comandos son mucho mas específicos que en MatLab, pero son mas potentes a la hora de ejecutar funciones.
 ## CONLCUSIONES
+- ROS es una herramienta modulable, que facilita su conexión con distintos software, los cuales facilitan tareas para alcanzar resultados óptimos. Los programas observados en esta práctica son robustos, esto permite tener un gran alcance en el desarrollo de trayectorias, patrones y demas tareas necesarias.
+- Al manipular plataformas open source, tales como ROS y Python, acercan la róbotica a la población y facilita el acceso a proyectos para los aficionados a la materia. El potencial de estas herramientas es grandísimo, y están al alcance de la mayoría. 
