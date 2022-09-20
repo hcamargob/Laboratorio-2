@@ -70,7 +70,6 @@ Universidad Nacional de Colombia Sede Bogotá
 
   ![image](https://user-images.githubusercontent.com/112737454/191140466-a16614ba-a854-49d7-ba1e-ba527bece21b.png)
   
-  *Explicar funciones utilizadas (ver archivo texto importante en el git)
   
   El nodo maestro se finaliza usando el siuiente comando en Matlab:
   ```
@@ -79,7 +78,7 @@ Universidad Nacional de Colombia Sede Bogotá
   
 ### ROS usando Python
   
-Se importaron las librerías necesarias para la ejecución del programa.
+Se importan las librerías necesarias para la ejecución del programa.
   ``` 
 import rospy
 import numpy as np
@@ -106,7 +105,70 @@ def getkey():
         termios.tcsetattr(fd, TERMIOS.TCSAFLUSH, old)
     return c
   ```
+  Se hace la conexión con el servicio _teleport\_absolute_, y se le asigna a la tecla R
+  ```
+  def teleport(x, y, ang):
+   rospy.wait_for_service('/turtle1/teleport_absolute')
+   try:
+       teleportA = rospy.ServiceProxy('/turtle1/teleport_absolute', TeleportAbsolute)
+       resp1 = teleportA(x, y, ang)
+       print('Teleported to x: {}, y: {}, ang: {}'.format(str(x),str(y),str(ang)))
+   except rospy.ServiceException as e:
+       print(str(e))
+  ```
+  Luego, se hace a conexión con el servicio _teleport\_relative_, y se le asigna a la tecla ESPACIO
   
-## ANÁLISIS Y RESULTADOS
+  ```
+  def teleportRel(x,ang):
+   rospy.wait_for_service('/turtle1/teleport_relative')
+   try:
+       teleportR = rospy.ServiceProxy('/turtle1/teleport_relative', TeleportRelative)
+       resp1 = teleportR(x, ang)
+       
+   except rospy.ServiceException:
+       pass
+  ```
+  
+ Posteriormente, se usa el tópico _cmd\_vel_ para asignar las funciones de las teclas W, A, S y D.
+  
+  ```
+  def pubVel(vel_x, ang_z, t):
+   pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
+   rospy.init_node('velPub', anonymous=False)
+   vel = Twist()
+   vel.linear.x = vel_x
+   vel.angular.z = ang_z
+   #rospy.loginfo(vel)
+   endTime = rospy.Time.now() + rospy.Duration(t)
+   while rospy.Time.now() < endTime:
+       pub.publish(vel)
 
+if __name__ == '__main__':
+   pubVel(0,0,0.1)
+   try:
+       while(1):
+           Tec=getkey()
+           if Tec==b'w':
+               pubVel(0.5,0,0.01)
+           if Tec==b'a':
+               pubVel(0,0.5,0.01)
+           if Tec==b's':
+               pubVel(-0.5,0,0.01)
+           if Tec==b'd':
+               pubVel(0,-0.5,0.01)
+           if Tec==b' ':
+               teleportRel(0,np.pi)
+           if Tec==b'r':
+               teleport(5.544445,5.544445,0)
+           if Tec==b'\x1b':
+               break                    
+           
+
+   except rospy.ROSInterruptException:
+       pass
+  ```
+Finalmente, se incluye el script realizado (myTeleopKey.py) al artchivo CMakeLists.txt. Después, se ingresa el comando catkin build en una nueva terminal para guardar los cambios ejecutados y se realiza las pruebas del código ejecutando Turtlesim, corriendo el archivo creado con el comando _rosrun hello\_turtle myTeleopKey.py._
+                                    
+## ANÁLISIS Y RESULTADOS
+### Matlab
 ## CONLCUSIONES
