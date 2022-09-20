@@ -169,7 +169,6 @@ if __name__ == '__main__':
   ```
 Finalmente, se incluye el script realizado (myTeleopKey.py) al artchivo CMakeLists.txt. Después, se ingresa el comando catkin build en una nueva terminal para guardar los cambios ejecutados y se realiza las pruebas del código ejecutando Turtlesim, corriendo el archivo creado con el comando _rosrun hello\_turtle myTeleopKey.py._
              
-[![Watch the video](/images/content/4279611/690cc1ce1c97ed83c883846f84451ad3.png)](http://www.youtube.com/watch?v=T-D1KVIuvjA)
  
 ## ANÁLISIS Y RESULTADOS
 ### Matlab
